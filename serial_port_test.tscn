@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnhij4u84ghia"]
+
+[ext_resource type="Script" path="res://serial_port_test.gd" id="1_c07n3"]
+
+[node name="SerialPortTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c07n3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.005
+anchor_right = 0.995
+anchor_bottom = 0.995
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="SerialList" type="OptionButton" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="BaudRate" type="OptionButton" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="OpenClose" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Open"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Hex" type="CheckBox" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hex"
+
+[node name="InputArea" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Input area"
+
+[node name="Send" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Send"
+
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer3/SerialList" to="." method="_on_serial_list_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer3/BaudRate" to="." method="_on_baud_rate_item_selected"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer3/OpenClose" to="." method="_on_open_close_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer2/Hex" to="." method="_on_hex_toggled"]
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer2/InputArea" to="." method="_on_input_area_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Send" to="." method="_on_send_pressed"]
