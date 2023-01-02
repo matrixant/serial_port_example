@@ -8,7 +8,7 @@ var is_hex := false
 
 
 func send_input_content():
-	if serial.is_opened():
+	if serial.is_open():
 		if is_hex:
 #			Get hex code list
 			var hex_str_arr:PackedStringArray = %InputArea.text.split(" ", false)
@@ -67,14 +67,14 @@ func _process(delta):
 
 
 func _on_data_received(data: PackedByteArray):
-	await RenderingServer.frame_post_draw
+#	await RenderingServer.frame_post_draw
 	%Content.text += data.get_string_from_ascii()
 	%Content.scroll_vertical = %Content.get_line_count()
 	if %Content.get_line_count() > 50:
 		%Content.text = ""
 	
 	print("Received[%d]: %s" % [data.size(), data.get_string_from_ascii()])
-	if serial.is_opened():
+	if serial.is_open():
 		serial.write_raw(data)
 
 
@@ -98,12 +98,12 @@ func _on_open_close_toggled(button_pressed):
 	if button_pressed:
 		serial.baudrate = baudrate
 		serial.open(port)
-		if serial.is_opened():
+		if serial.is_open():
 			button_pressed = false
 			%OpenClose.text = "Close"
 	else:
 		serial.close()
-		if not serial.is_opened():
+		if not serial.is_open():
 			button_pressed = true
 			%OpenClose.text = "Open"
 
