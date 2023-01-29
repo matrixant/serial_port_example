@@ -4,17 +4,17 @@ entry_symbol = "serial_port_library_init"
 
 [libraries]
 
-macos.debug = "res://bin/libserialport.macos.template_debug.framework"
-macos.release = "res://bin/libserialport.macos.template_release.framework"
+macos.debug = "bin/libserialport.macos.template_debug.framework"
+macos.release = "bin/libserialport.macos.template_release.framework"
 
-windows.debug.x86_32 = "res://bin/libserialport.windows.template_debug.x86_32.dll"
-windows.release.x86_32 = "res://bin/libserialport.windows.template_release.x86_32.dll"
+windows.debug.x86_32 = "bin/libserialport.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "bin/libserialport.windows.template_release.x86_32.dll"
 windows.debug.x86_64 = "bin/libserialport.windows.template_debug.x86_64.dll"
 windows.release.x86_64 = "bin/libserialport.windows.template_release.x86_64.dll"
 
-linux.debug.x86_64 = "res://bin/libserialport.linux.template_debug.x86_64.so"
-linux.release.x86_64 = "res://bin/libserialport.linux.template_release.x86_64.so"
-linux.debug.arm64 = "res://bin/libserialport.linux.template_debug.arm64.so"
-linux.release.arm64 = "res://bin/libserialport.linux.template_release.arm64.so"
-linux.debug.rv64 = "res://bin/libserialport.linux.template_debug.rv64.so"
-linux.release.rv64 = "res://bin/libserialport.linux.template_release.rv64.so"
+linux.debug.x86_64 = "bin/libserialport.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "bin/libserialport.linux.template_release.x86_64.so"
+linux.debug.arm64 = "bin/libserialport.linux.template_debug.arm64.so"
+linux.release.arm64 = "bin/libserialport.linux.template_release.arm64.so"
+linux.debug.rv64 = "bin/libserialport.linux.template_debug.rv64.so"
+linux.release.rv64 = "bin/libserialport.linux.template_release.rv64.so"
