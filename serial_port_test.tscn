@@ -38,15 +38,15 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-clip_text = true
 text_overrun_behavior = 3
+clip_text = true
 
 [node name="BaudRate" type="OptionButton" parent="VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-clip_text = true
 text_overrun_behavior = 3
+clip_text = true
 
 [node name="OpenClose" type="Button" parent="VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
