@@ -1,16 +1,17 @@
 [configuration]
 
 entry_symbol = "serial_port_library_init"
+compatibility_minimum = 4.1
 
 [libraries]
 
 macos.debug = "bin/libserialport.macos.template_debug.framework"
 macos.release = "bin/libserialport.macos.template_release.framework"
 
-windows.debug.x86_32 = "bin/libserialport.windows.template_debug.x86_32.dll"
-windows.release.x86_32 = "bin/libserialport.windows.template_release.x86_32.dll"
-windows.debug.x86_64 = "bin/libserialport.windows.template_debug.x86_64.dll"
-windows.release.x86_64 = "bin/libserialport.windows.template_release.x86_64.dll"
+windows.debug.x86_32 = "bin/serialport.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "bin/serialport.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "bin/serialport.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "bin/serialport.windows.template_release.x86_64.dll"
 
 linux.debug.x86_64 = "bin/libserialport.linux.template_debug.x86_64.so"
 linux.release.x86_64 = "bin/libserialport.linux.template_release.x86_64.so"
